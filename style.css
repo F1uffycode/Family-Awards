@@ -183,13 +183,23 @@ a {
 }
 
 .blob__title span {
-    font-family: "Bebas Neue", sans-serif;
+    display: inline-block;
+    color: #808080;
+    font-size: 4rem;
+}
 
-    font-size: clamp(3rem, 6vw, 4rem);
+.blob__title span .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: letterAppear 0.5s ease forwards;
+}
 
-    letter-spacing: 0.5rem;
-
-    color: #A0A0A0;
+@keyframes letterAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
