@@ -35,7 +35,7 @@ a {
 
 .hero__section {
     position: relative;
-    min-height: 97vh;
+    min-height: 95vh;
 
     display: flex;
     justify-content: center;
