@@ -28,6 +28,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+}
+
 
 /* =========================
    HERO
@@ -254,7 +258,7 @@ a {
 ========================= */
 
 .corner {
-    position: fixed;
+    position: absolute;
     z-index: 10;
 
     width: 80px;
@@ -356,6 +360,40 @@ a {
     font-size: 0.8rem;
 
     text-align: center;
+
+    margin-bottom: 25rem;
+}
+
+.nav__list {
+    display: flex;
+    justify-self: center;
+    gap: 1.5rem;
+    position: fixed;
+    z-index: 2;
+    top: 3%;
+    background-color: #0D0D0F;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+}
+
+.nav__link {
+    transition: 0.6s ease all;
+}
+
+.nav__link:hover {
+    opacity: 0.7;
+}
+
+.prev__year a {
+    color: #656566;
+}
+
+.active__year {
+    font-weight: bold;
+}
+
+.next__year a {
+    color: #65656681;
 }
 
 
