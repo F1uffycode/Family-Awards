@@ -12,3 +12,4 @@ const year = document.querySelector('.blob__title span');
 
         year.appendChild(span);
     });
+
