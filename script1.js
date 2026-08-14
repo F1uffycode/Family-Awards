@@ -1,9 +1,17 @@
+// ======================
+// Анимация заголовка
+// ======================
+
 const year = document.querySelector('.blob__title span');
+
+if (year) {
+
     const text = year.textContent;
 
     year.textContent = '';
 
     [...text].forEach((letter, index) => {
+
         const span = document.createElement('span');
 
         span.classList.add('letter');
@@ -11,7 +19,11 @@ const year = document.querySelector('.blob__title span');
         span.style.animationDelay = `${index * 0.45}s`;
 
         year.appendChild(span);
+
     });
+
+}
+
 
 // ======================
 // Голосование
@@ -25,33 +37,51 @@ if (finalBtn) {
 
         e.preventDefault();
 
+        // Ищем выбранную карточку
         const selected = document.querySelector(
             'input[name="tournament-of-year"]:checked'
         );
 
         if (!selected) {
-            alert("Выберите кандидата.");
+
+            alert("Сначала выберите карточку!");
+
             return;
+
         }
 
-        const card = document.querySelector(
+        // Получаем название кандидата из h3
+        const candidateElement = document.querySelector(
             `label[for="${selected.id}"] h3`
         );
 
-        const candidate = card.textContent.trim();
+        if (!candidateElement) {
+
+            alert("Не удалось определить кандидата.");
+
+            return;
+
+        }
+
+        const candidate = candidateElement.textContent.trim();
 
         try {
 
             const response = await fetch("/api/vote", {
+
                 method: "POST",
+
                 headers: {
                     "Content-Type": "application/json"
                 },
+
                 credentials: "include",
+
                 body: JSON.stringify({
                     nomination: "Турнир года",
                     vote: candidate
                 })
+
             });
 
             const data = await response.json();
@@ -68,7 +98,7 @@ if (finalBtn) {
 
         } catch (error) {
 
-            console.error(error);
+            console.error("Vote Error:", error);
 
             alert("Ошибка отправки голоса.");
 

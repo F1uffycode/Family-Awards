@@ -120,7 +120,7 @@ app.get("/auth/discord/callback", async (req, res) => {
 
 
         // Возвращаем пользователя на сайт
-        res.redirect("/");
+        res.redirect("/2026.html");
 
     } catch (error) {
 

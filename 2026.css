@@ -268,3 +268,14 @@ input[type="radio"]:checked + .card {
     box-shadow: 0 0 25px rgba(255,215,0,.8);
     transform: scale(1.03);
 }
+
+.card {
+    transition: .3s;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .card {
+    transform: translateY(-10px);
+    border: 4px solid #ffd54a;
+    box-shadow: 0 0 25px rgba(255, 213, 74, .8);
+}
