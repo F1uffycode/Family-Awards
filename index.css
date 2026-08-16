@@ -322,7 +322,7 @@ ul {
 ========================= */
 
 .fam__text,
-.discord__text {
+.fam__discord {
     position: absolute;
     color: #656566;
     font-size: 1rem;
@@ -338,15 +338,15 @@ ul {
     letter-spacing: 0.8rem;
 }
 
-.discord__text {
+.fam__discord {
     right: 25px;
     font-size: 3rem;
-    transition: 0.6s ease all;
     cursor: pointer;
 }
 
-.discord__text:hover {
+.fam__discord:hover {
     opacity: 0.7;
+    transition: 0.3s ease all;
 }
 
 
